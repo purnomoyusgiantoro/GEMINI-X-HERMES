@@ -1,0 +1,33 @@
+name: Validate GEMINI X HERMES
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Skill Metadata
+        run: |
+          echo "Validating SKILL.md existence and frontmatter..."
+          test -f skills/hermes-cognition/SKILL.md
+          head -n 1 skills/hermes-cognition/SKILL.md | grep -q -- "---"
+          echo "SKILL.md validated successfully."
+
+      - name: Validate Scripts Syntax
+        run: |
+          bash -n scripts/install.sh
+          echo "Shell script syntax valid."
+
+      - name: Validate Reference Links
+        run: |
+          test -f skills/hermes-cognition/references/error-classification.md
+          test -f skills/hermes-cognition/references/memory-and-state.md
+          test -f skills/hermes-cognition/references/mixture-of-agents.md
+          echo "All referenced protocol documents exist."
