@@ -1,0 +1,15 @@
+[
+  {
+    "id": "forge_20260927174524",
+    "timestamp": "2026-09-27T17:45:24.911605+00:00",
+    "skill_name": "react-hooks-debugging",
+    "category": "debugging",
+    "tags": [
+      "react",
+      "hooks",
+      "useState"
+    ],
+    "source_workflow": "Fixed useEffect cleanup in KanbanBoard",
+    "installed_globally": true
+  }
+]

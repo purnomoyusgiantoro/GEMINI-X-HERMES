@@ -1,0 +1,17 @@
+[
+  {
+    "id": "grade_b778b256",
+    "timestamp": "2026-09-27T17:45:20.160778+00:00",
+    "task_id": "task-xyz",
+    "task_description": "Fix Pomodoro timer bug",
+    "score": 82.5,
+    "grade": "B",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 50,
+      "performance": 100
+    }
+  }
+]

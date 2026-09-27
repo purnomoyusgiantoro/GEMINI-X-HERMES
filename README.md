@@ -171,6 +171,23 @@ GEMINI-X-HERMES/
 ├── examples/
 │   ├── complex_bugfix_workflow.md    # Real-world walkthrough: complex bug resolution
 │   └── multi_agent_audit_example.md  # Real-world walkthrough: multi-agent audit
+├── memory-bank/                      # 🧠 v2: Error Memory Database
+│   ├── bank.py                       # CRUD operations for error-solution pairs
+│   ├── matcher.py                    # Fuzzy matching engine (difflib)
+│   └── errors.json                   # Persistent error-solution database
+├── self-grade/                       # 📊 v2: Self-Grading System
+│   ├── grader.py                     # 5-dimension scoring engine (0-100)
+│   ├── report.py                     # Markdown trend & summary reports
+│   └── grades.json                   # Grade history database
+├── skill-forge/                      # 🔨 v2: Auto Skill Generator
+│   ├── forge.py                      # Workflow → SKILL.md generator
+│   ├── templates/                    # Category templates (debugging, setup, workflow)
+│   ├── forged-skills/                # Output: auto-generated skills
+│   └── forge-log.json                # Forge history log
+├── telemetry/                        # 📈 v2: Cognitive Telemetry Dashboard
+│   ├── collector.py                  # Metrics collection engine
+│   ├── dashboard_api.py              # Flask Blueprint API (port 19001)
+│   └── metrics.json                  # Persistent metrics storage
 ├── scripts/
 │   ├── install.ps1                   # Windows automated installer
 │   └── install.sh                    # Linux / macOS automated installer
@@ -202,6 +219,10 @@ GEMINI-X-HERMES/
 | 🎯 [Zero-Hallucination Contract](docs/VERIFICATION_CONTRACT.md) | Strict proof and verification requirements |
 | 💡 [Bugfix Example](examples/complex_bugfix_workflow.md) | Step-by-step example of resolving a distributed lock bug |
 | 🔍 [Multi-Agent Audit Example](examples/multi_agent_audit_example.md) | Step-by-step example of pre-merge security & architecture audits |
+| 🧠 [Error Memory Bank](memory-bank/) | **v2**: Persistent error-solution database with fuzzy matching |
+| 📊 [Self-Grading System](self-grade/) | **v2**: 5-dimension auto-scoring engine (0-100, A+ through F) |
+| 🔨 [Auto Skill Forge](skill-forge/) | **v2**: Workflow → reusable skill auto-generator |
+| 📈 [Cognitive Telemetry](telemetry/) | **v2**: Real-time metrics dashboard & Flask API |
 
 ---
 
