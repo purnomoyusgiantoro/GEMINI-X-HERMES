@@ -75,4 +75,4 @@ if (Test-Path $SwitchAgyScripts) {
 }
 
 Write-Host "`n[SUCCESS] All skills installed successfully!" -ForegroundColor Green
-Write-Host "Antigravity will now automatically discover 'hermes-cognition' and 'switch-agy'." -ForegroundColor Cyan
+Write-Host "Antigravity will now automatically discover 'hermes-cognition', 'hermes-memory', and 'switch-agy'." -ForegroundColor Cyan
