@@ -202,6 +202,9 @@ GEMINI-X-HERMES/
 │   │   ├── SKILL.md                  # Memory & clarification gate specification
 │   │   ├── scripts/                  # memory_manager.py (project & decision registry)
 │   │   └── references/               # Proactive clarification reference guide
+│   ├── hermes-model-router/          # Intelligent multi-model orchestration & auto-routing
+│   │   ├── SKILL.md                  # Model router specification (Tier S/A/B)
+│   │   └── references/               # Routing matrix & rate-limit cascade
 │   └── switch-agy/                   # Interactive multi-account switcher for AGY CLI
 │       ├── SKILL.md                  # Account switcher skill specification
 │       └── scripts/                  # CLI binaries (switch-agy-core.py, .cmd, .ps1)
@@ -230,6 +233,7 @@ GEMINI-X-HERMES/
 | 📊 [Self-Grading System](self-grade/) | **v2**: 5-dimension auto-scoring engine (0-100, A+ through F) |
 | 🔨 [Auto Skill Forge](skill-forge/) | **v2**: Workflow → reusable skill auto-generator |
 | 🧠 [Hermes Memory & Recall](skills/hermes-memory/SKILL.md) | Persistent cross-session recall & proactive clarification gate |
+| 🔀 [Hermes Model Router](skills/hermes-model-router/SKILL.md) | Intelligent multi-model routing (Claude↔Gemini↔GPT, auto-downgrade) |
 | 🔄 [Switch AGY Account Switcher](skills/switch-agy/SKILL.md) | Interactive multi-account profile switcher for Antigravity CLI |
 | 📈 [Cognitive Telemetry](telemetry/) | **v2**: Real-time metrics dashboard & Flask API |
 
