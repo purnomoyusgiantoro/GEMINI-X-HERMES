@@ -1,24 +1,21 @@
 <#
 .SYNOPSIS
-    Installs the Hermes Cognition skill for Google Antigravity and Agentic LLM systems.
+    Installs Hermes Cognition and Switch-AGY skills for Google Antigravity and Agentic LLM systems.
 
 .DESCRIPTION
-    Copies the hermes-cognition skill directory to the Antigravity global skill directory
-    ($env:USERPROFILE\.gemini\config\skills) or a local project workspace (.agents\skills).
+    Copies skill directories to the Antigravity global skill directory
+    ($env:USERPROFILE\.gemini\config\skills) or a local project workspace (.agents\skills),
+    and installs CLI binaries to $env:LOCALAPPDATA\agy\bin.
 
 .PARAMETER Global
-    Installs globally to $env:USERPROFILE\.gemini\config\skills\hermes-cognition (Default: $true).
+    Installs globally to $env:USERPROFILE\.gemini\config\skills (Default: $true).
 
 .PARAMETER ProjectPath
     Path to a target project repository if installing locally into .agents\skills\.
 
 .EXAMPLE
     .\scripts\install.ps1
-    Installs hermes-cognition globally for all Antigravity workspaces.
-
-.EXAMPLE
-    .\scripts\install.ps1 -Global:$false -ProjectPath "C:\Projects\my-app"
-    Installs hermes-cognition locally to the specified project.
+    Installs all skills globally for all Antigravity workspaces.
 #>
 
 [CmdletBinding()]
@@ -30,10 +27,11 @@ param(
 $ErrorActionPreference = "Stop"
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$SourceDir = Join-Path (Split-Path -Parent $ScriptDir) "skills\hermes-cognition"
+$RepoRoot = Split-Path -Parent $ScriptDir
+$SkillsSource = Join-Path $RepoRoot "skills"
 
-if (-not (Test-Path $SourceDir)) {
-    Write-Error "Source skill directory not found at '$SourceDir'."
+if (-not (Test-Path $SkillsSource)) {
+    Write-Error "Source skills directory not found at '$SkillsSource'."
     exit 1
 }
 
@@ -43,36 +41,38 @@ Write-Host "==========================================================" -Foregro
 
 if ($Global -and [string]::IsNullOrWhiteSpace($ProjectPath)) {
     $TargetBase = Join-Path $env:USERPROFILE ".gemini\config\skills"
-    $TargetDir = Join-Path $TargetBase "hermes-cognition"
-    Write-Host "[+] Target: Global Antigravity Config" -ForegroundColor Yellow
+    Write-Host "[+] Target: Global Antigravity Config ($TargetBase)" -ForegroundColor Yellow
 } else {
     if ([string]::IsNullOrWhiteSpace($ProjectPath)) {
         $ProjectPath = Get-Location
     }
     $TargetBase = Join-Path $ProjectPath ".agents\skills"
-    $TargetDir = Join-Path $TargetBase "hermes-cognition"
     Write-Host "[+] Target: Project Workspace ($ProjectPath)" -ForegroundColor Yellow
 }
-
-Write-Host "[*] Source path: $SourceDir"
-Write-Host "[*] Destination: $TargetDir"
 
 if (-not (Test-Path $TargetBase)) {
     Write-Host "[*] Creating target directory: $TargetBase"
     New-Item -ItemType Directory -Path $TargetBase -Force | Out-Null
 }
 
-if (Test-Path $TargetDir) {
-    Write-Host "[!] Existing installation found. Updating files..." -ForegroundColor Yellow
+# Install each skill from skills/
+Get-ChildItem -Path $SkillsSource -Directory | ForEach-Object {
+    $skillName = $_.Name
+    $destDir = Join-Path $TargetBase $skillName
+    Write-Host "[*] Installing skill: $skillName -> $destDir"
+    Copy-Item -Path $_.FullName -Destination $TargetBase -Recurse -Force
 }
 
-Copy-Item -Path $SourceDir -Destination $TargetBase -Recurse -Force
-
-if (Test-Path (Join-Path $TargetDir "SKILL.md")) {
-    Write-Host "`n[SUCCESS] Hermes Cognition skill installed successfully!" -ForegroundColor Green
-    Write-Host "Location: $TargetDir" -ForegroundColor Green
-    Write-Host "`nAntigravity will now automatically discover 'hermes-cognition' on startup." -ForegroundColor Cyan
-} else {
-    Write-Error "Installation verification failed. SKILL.md not found in $TargetDir."
-    exit 1
+# Also ensure switch-agy CLI tools are placed in agy bin directory
+$AgyBin = Join-Path $env:LOCALAPPDATA "agy\bin"
+$SwitchAgyScripts = Join-Path $SkillsSource "switch-agy\scripts"
+if (Test-Path $SwitchAgyScripts) {
+    if (-not (Test-Path $AgyBin)) {
+        New-Item -ItemType Directory -Path $AgyBin -Force | Out-Null
+    }
+    Write-Host "[*] Installing switch-agy CLI binaries to $AgyBin" -ForegroundColor Yellow
+    Copy-Item -Path "$SwitchAgyScripts\*" -Destination $AgyBin -Force
 }
+
+Write-Host "`n[SUCCESS] All skills installed successfully!" -ForegroundColor Green
+Write-Host "Antigravity will now automatically discover 'hermes-cognition' and 'switch-agy'." -ForegroundColor Cyan

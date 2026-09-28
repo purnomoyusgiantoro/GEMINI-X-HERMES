@@ -192,12 +192,15 @@ GEMINI-X-HERMES/
 │   ├── install.ps1                   # Windows automated installer
 │   └── install.sh                    # Linux / macOS automated installer
 ├── skills/
-│   └── hermes-cognition/             # Ready-to-use skill package
-│       ├── SKILL.md                  # Main skill specification & YAML frontmatter
-│       └── references/
-│           ├── error-classification.md
-│           ├── memory-and-state.md
-│           └── mixture-of-agents.md
+│   ├── hermes-cognition/             # Ready-to-use skill package
+│   │   ├── SKILL.md                  # Main skill specification & YAML frontmatter
+│   │   └── references/
+│   │       ├── error-classification.md
+│   │       ├── memory-and-state.md
+│   │       └── mixture-of-agents.md
+│   └── switch-agy/                   # Interactive multi-account switcher for AGY CLI
+│       ├── SKILL.md                  # Account switcher skill specification
+│       └── scripts/                  # CLI binaries (switch-agy-core.py, .cmd, .ps1)
 ├── AGENTS.md                         # Universal directives for AI coding agents
 ├── GEMINI.md                         # Gemini / Antigravity workspace instructions
 ├── CONTRIBUTING.md                   # Community contribution guidelines
@@ -222,6 +225,7 @@ GEMINI-X-HERMES/
 | 🧠 [Error Memory Bank](memory-bank/) | **v2**: Persistent error-solution database with fuzzy matching |
 | 📊 [Self-Grading System](self-grade/) | **v2**: 5-dimension auto-scoring engine (0-100, A+ through F) |
 | 🔨 [Auto Skill Forge](skill-forge/) | **v2**: Workflow → reusable skill auto-generator |
+| 🔄 [Switch AGY Account Switcher](skills/switch-agy/SKILL.md) | Interactive multi-account profile switcher for Antigravity CLI |
 | 📈 [Cognitive Telemetry](telemetry/) | **v2**: Real-time metrics dashboard & Flask API |
 
 ---

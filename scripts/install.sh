@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 #
 # GEMINI X HERMES - Autonomous Skill Installer (Linux / macOS / WSL)
-# Installs hermes-cognition globally (~/.gemini/config/skills) or to a project (.agents/skills)
+# Installs all skills globally (~/.gemini/config/skills) or to a project (.agents/skills)
 #
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOURCE_DIR="$(dirname "$SCRIPT_DIR")/skills/hermes-cognition"
+REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+SKILLS_SOURCE="$REPO_ROOT/skills"
 
 MODE="global"
 TARGET_PROJECT=""
@@ -29,33 +30,39 @@ echo "=========================================================="
 echo "    GEMINI X HERMES - Autonomous Skill Installer (POSIX)   "
 echo "=========================================================="
 
-if [ ! -d "$SOURCE_DIR" ]; then
-    echo "[-] Error: Source directory $SOURCE_DIR does not exist."
+if [ ! -d "$SKILLS_SOURCE" ]; then
+    echo "[-] Error: Source directory $SKILLS_SOURCE does not exist."
     exit 1
 fi
 
 if [ "$MODE" = "global" ]; then
     TARGET_BASE="$HOME/.gemini/config/skills"
-    TARGET_DIR="$TARGET_BASE/hermes-cognition"
     echo "[+] Target: Global Antigravity Config ($TARGET_BASE)"
 else
     TARGET_PROJECT="${TARGET_PROJECT:-$(pwd)}"
     TARGET_BASE="$TARGET_PROJECT/.agents/skills"
-    TARGET_DIR="$TARGET_BASE/hermes-cognition"
     echo "[+] Target: Local Project Workspace ($TARGET_PROJECT)"
 fi
 
 mkdir -p "$TARGET_BASE"
 
-echo "[*] Copying skill files from $SOURCE_DIR..."
-cp -R "$SOURCE_DIR" "$TARGET_BASE/"
+echo "[*] Copying skills from $SKILLS_SOURCE..."
+for skill in "$SKILLS_SOURCE"/*; do
+    if [ -d "$skill" ]; then
+        skill_name="$(basename "$skill")"
+        echo "[*] Installing skill: $skill_name -> $TARGET_BASE/$skill_name"
+        cp -R "$skill" "$TARGET_BASE/"
+    fi
+done
 
-if [ -f "$TARGET_DIR/SKILL.md" ]; then
-    echo ""
-    echo "[SUCCESS] Hermes Cognition skill installed successfully!"
-    echo "Location: $TARGET_DIR"
-    echo "Antigravity will automatically discover 'hermes-cognition' on startup."
-else
-    echo "[-] Error: SKILL.md not found in $TARGET_DIR after copy."
-    exit 1
+# If switch-agy scripts exist, copy to ~/.local/bin or agy bin if available
+AGY_BIN="$HOME/.local/bin"
+if [ -d "$SKILLS_SOURCE/switch-agy/scripts" ]; then
+    mkdir -p "$AGY_BIN"
+    cp "$SKILLS_SOURCE/switch-agy/scripts/switch-agy-core.py" "$AGY_BIN/switch-agy" 2>/dev/null || true
+    chmod +x "$AGY_BIN/switch-agy" 2>/dev/null || true
 fi
+
+echo ""
+echo "[SUCCESS] All skills installed successfully!"
+echo "Antigravity will automatically discover 'hermes-cognition' and 'switch-agy' on startup."
