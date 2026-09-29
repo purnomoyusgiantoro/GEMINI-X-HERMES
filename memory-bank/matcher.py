@@ -4,8 +4,16 @@ Fuzzy matching engine for error solutions.
 import difflib
 import re
 from typing import List, Dict, Any, Optional, Tuple
-from pathlib import Path
-from .bank import ErrorMemoryBank, ErrorCategory
+try:
+    from .bank import ErrorMemoryBank, ErrorCategory
+except (ImportError, ValueError):
+    try:
+        from bank import ErrorMemoryBank, ErrorCategory
+    except (ImportError, ModuleNotFoundError):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).parent))
+        from bank import ErrorMemoryBank, ErrorCategory
 
 class ErrorMatcher:
     """Fuzzy matching engine for the Error Memory Bank."""

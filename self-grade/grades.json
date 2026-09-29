@@ -73,5 +73,110 @@
       "security": 50,
       "performance": 100
     }
+  },
+  {
+    "id": "grade_ff54d142",
+    "timestamp": "2026-09-29T08:56:48.531255+00:00",
+    "task_id": "sentinel_GEMINI-X-HERMES",
+    "task_description": "Pre-commit audit on 2 files in GEMINI-X-HERMES",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_d155e6bd",
+    "timestamp": "2026-09-29T09:00:23.234285+00:00",
+    "task_id": "unit_test_task",
+    "task_description": "Unit Test Evaluation",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_b5a206ed",
+    "timestamp": "2026-09-29T09:00:40.688994+00:00",
+    "task_id": "unit_test_task",
+    "task_description": "Unit Test Evaluation",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_57339f01",
+    "timestamp": "2026-09-29T09:00:53.148482+00:00",
+    "task_id": "unit_test_task",
+    "task_description": "Unit Test Evaluation",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_5e6ab24b",
+    "timestamp": "2026-09-29T09:01:01.103728+00:00",
+    "task_id": "sentinel_GEMINI-X-HERMES",
+    "task_description": "Pre-commit audit on 5 files in GEMINI-X-HERMES",
+    "score": 70.0,
+    "grade": "C",
+    "dimensions": {
+      "correctness": 50,
+      "readability": 100,
+      "architecture": 100,
+      "security": 0,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_d45df193",
+    "timestamp": "2026-09-29T09:01:23.815367+00:00",
+    "task_id": "unit_test_task",
+    "task_description": "Unit Test Evaluation",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_17305384",
+    "timestamp": "2026-09-29T09:01:32.964478+00:00",
+    "task_id": "sentinel_GEMINI-X-HERMES",
+    "task_description": "Pre-commit audit on 5 files in GEMINI-X-HERMES",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
   }
 ]
