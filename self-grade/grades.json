@@ -178,5 +178,215 @@
       "security": 100,
       "performance": 100
     }
+  },
+  {
+    "id": "grade_41bcf156",
+    "timestamp": "2026-09-29T09:01:40.874115+00:00",
+    "task_id": "sentinel_GEMINI-X-HERMES",
+    "task_description": "Pre-commit audit on 5 files in GEMINI-X-HERMES",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_4fc4dfdc",
+    "timestamp": "2026-09-29T09:23:15.632892+00:00",
+    "task_id": "sentinel_wallet_tes",
+    "task_description": "Pre-commit audit on 18 files in wallet_tes",
+    "score": 90.0,
+    "grade": "A",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_8b1c0edc",
+    "timestamp": "2026-09-29T09:23:21.413069+00:00",
+    "task_id": "sentinel_wallet_tes",
+    "task_description": "Pre-commit audit on 18 files in wallet_tes",
+    "score": 90.0,
+    "grade": "A",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_bc764fd9",
+    "timestamp": "2026-09-29T11:05:25.877865+00:00",
+    "task_id": "sentinel_wallet_tes",
+    "task_description": "Pre-commit audit on 17 files in wallet_tes",
+    "score": 90.0,
+    "grade": "A",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_5d03460a",
+    "timestamp": "2026-11-14T13:00:38.579284+00:00",
+    "task_id": "sentinel_asistan_bola",
+    "task_description": "Pre-commit audit on 4 files in asistan_bola",
+    "score": 90.0,
+    "grade": "A",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_b1b66f37",
+    "timestamp": "2026-11-14T13:00:40.802127+00:00",
+    "task_id": "sentinel_Magang",
+    "task_description": "Pre-commit audit on 7 files in Magang",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_d3837c6d",
+    "timestamp": "2026-11-14T13:00:41.983136+00:00",
+    "task_id": "sentinel_1-Projek",
+    "task_description": "Pre-commit audit on 18 files in 1-Projek",
+    "score": 90.0,
+    "grade": "A",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 50,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_171171cb",
+    "timestamp": "2026-11-14T13:00:42.741860+00:00",
+    "task_id": "sentinel_purnomo-taskflow",
+    "task_description": "Pre-commit audit on 1 files in purnomo-taskflow",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_9790cae6",
+    "timestamp": "2026-11-14T13:00:43.544565+00:00",
+    "task_id": "sentinel_belajar-laravel-dasar",
+    "task_description": "Pre-commit audit on 3 files in belajar-laravel-dasar",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_7068c2cc",
+    "timestamp": "2026-11-14T13:00:44.320300+00:00",
+    "task_id": "sentinel_wallet_tes",
+    "task_description": "Pre-commit audit on 1 files in wallet_tes",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_b7c785f2",
+    "timestamp": "2026-11-14T13:00:45.097048+00:00",
+    "task_id": "sentinel_angkutan_symotech",
+    "task_description": "Pre-commit audit on 1 files in angkutan_symotech",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_b24eea06",
+    "timestamp": "2026-11-14T13:00:45.897344+00:00",
+    "task_id": "sentinel_symotech",
+    "task_description": "Pre-commit audit on 1 files in symotech",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_827e669f",
+    "timestamp": "2026-11-14T13:01:21.489827+00:00",
+    "task_id": "sentinel_wallet_tes",
+    "task_description": "Pre-commit audit on 1 files in wallet_tes",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
+  },
+  {
+    "id": "grade_5e437213",
+    "timestamp": "2026-11-14T13:02:10.248081+00:00",
+    "task_id": "sentinel_GEMINI-X-HERMES",
+    "task_description": "Pre-commit audit on 3 files in GEMINI-X-HERMES",
+    "score": 100.0,
+    "grade": "A+",
+    "dimensions": {
+      "correctness": 100,
+      "readability": 100,
+      "architecture": 100,
+      "security": 100,
+      "performance": 100
+    }
   }
 ]
